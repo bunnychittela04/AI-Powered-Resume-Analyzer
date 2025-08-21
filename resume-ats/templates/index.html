@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+    <div class="field">
+      <label>Upload Resume (.pdf / .docx / .txt)</label>
+      <input type="file" name="resume" accept=".pdf,.docx,.txt" required />
+    </div>
+    <div class="field">
+      <label>Paste Job Description (JD)</label>
+      <textarea name="jd" rows="10" placeholder="Paste the JD here..." required></textarea>
+    </div>
+    <button type="submit">Analyze</button>
+  </form>
+</section>
+
+<section class="tips">
+  <h2>What you get</h2>
+  <ul>
+    <li>ATS-style match score</li>
+    <li>Extracted resume skills</li>
+    <li>JD keywords and missing terms</li>
+  </ul>
+</section>
+{% endblock %}

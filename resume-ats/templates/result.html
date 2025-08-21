@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Results</h2>
+  <div class="score">
+    <div class="score-number">{{ score|round(1) }}%</div>
+    <div class="score-detail">
+      <p><strong>Semantic Similarity:</strong> {{ (semantic_sim * 100)|round(1) }}%</p>
+      <p><strong>Keyword F1:</strong> {{ (kw_f1 * 100)|round(1) }}%</p>
+      <p><strong>Overlap:</strong> {{ overlap }} terms</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <h3>Resume Skills (detected)</h3>
+      {% if resume_skills %}
+        <ul class="pill-list">
+          {% for s in resume_skills %}<li>{{ s }}</li>{% endfor %}
+        </ul>
+      {% else %}
+        <p>No specific skills detected.</p>
+      {% endif %}
+    </div>
+
+    <div>
+      <h3>JD Keywords (extracted)</h3>
+      {% if jd_terms %}
+        <ul class="pill-list">
+          {% for s in jd_terms %}<li>{{ s }}</li>{% endfor %}
+        </ul>
+      {% else %}
+        <p>No keywords found.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div>
+    <h3>Missing Keywords (add these to improve your score)</h3>
+    {% if missing %}
+      <ul class="pill-list warn">
+        {% for s in missing %}<li>{{ s }}</li>{% endfor %}
+      </ul>
+    {% else %}
+      <p>Great! Your resume covers the JD keywords.</p>
+    {% endif %}
+  </div>
+
+  <a href="{{ url_for('index') }}" class="back">Analyze another</a>
+</section>
+{% endblock %}
