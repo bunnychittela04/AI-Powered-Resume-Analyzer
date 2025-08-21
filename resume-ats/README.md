@@ -1,40 +1,32 @@
 # AI-Powered Resume Analyzer (ATS Optimizer)
 
-A minimal Flask app that compares a candidate's resume to a Job Description (JD) using NLP + TF-IDF semantic similarity and keyword coverage, producing an ATS-like match score and suggestions for missing keywords.
+## 📌 Project Overview
+The **AI-Powered Resume Analyzer** is a web-based tool designed to evaluate resumes against job descriptions using **Natural Language Processing (NLP)** techniques.  
+It helps job seekers improve their **ATS (Applicant Tracking System)** score by highlighting missing keywords, analyzing skills, and providing an overall match percentage.  
 
-## Quickstart (VS Code)
+---
 
-1. **Download / Open**
-   - Open this folder in VS Code.
+## 🚀 Features
+- 📄 **Resume Upload**: Upload resumes in `.pdf` or `.docx` format.
+- 📝 **Job Description Input**: Paste or upload the target job description.
+- 🔍 **ATS Match Score**: Calculates a match percentage between the resume and job description.
+- 📊 **Keyword Analysis**: Identifies missing important keywords from the resume.
+- 📈 **Skills & Strengths Breakdown**: Shows strengths and improvement areas.
+- 🖼 **User-Friendly Dashboard**: Clean, simple, and responsive UI.
+- 💡 **AI Suggestions**: Suggests improvements to make the resume ATS-friendly.
 
-2. **Create a virtual environment**
-   - **Windows (PowerShell):**
-     ```powershell
-     python -m venv .venv
-     .\.venv\Scripts\Activate.ps1
-     ```
-   - **macOS / Linux (bash/zsh):**
-     ```bash
-     python3 -m venv .venv
-     source .venv/bin/activate
-     ```
+---
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   python -m spacy download en_core_web_sm
-   ```
-
-4. **Run the app**
-   ```bash
-   python app.py
-   ```
-   Then open http://127.0.0.1:5000/
-
-5. **Use it**
-   - Upload a resume file (`.pdf` / `.docx` / `.txt`)
-   - Paste a Job Description (JD) into the text area
-   - Get: match score, extracted skills, and missing keywords
+## 🛠 Tech Stack
+| Technology     | Purpose |
+|----------------|---------|
+| **Python 3.x** | Backend processing |
+| **Flask** | Web framework |
+| **spaCy / NLTK** | NLP processing |
+| **scikit-learn** | Text similarity calculations |
+| **PDFMiner / docx2txt** | Resume text extraction |
+| **Bootstrap / HTML / CSS** | Frontend styling |
+| **JavaScript** | Client-side interactivity |
 
 ## Project Structure
 
